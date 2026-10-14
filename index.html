@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterviewPilot AI | Mock Interview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <a class="brand" href="#"><span class="brand-icon">✦</span>InterviewPilot<span class="brand-ai"> AI</span></a>
+        <span class="status"><span class="dot"></span> Interview Studio</span>
+    </header>
+    <main class="container">
+        <section class="hero">
+            <div class="eyebrow">YOUR PERSONAL AI CAREER COACH</div>
+            <h1>Practice smarter.<br><span>Interview better.</span></h1>
+            <p class="subtitle">Build confidence with realistic mock interviews. Practise your answers and discover where you can improve.</p>
+        </section>
+        <section class="setup-card" id="setup">
+            <div class="section-heading"><div><h2>Set up your interview</h2><p>Customize your next practice session.</p></div><span class="step-label">STEP 01</span></div>
+            <form id="interviewForm">
+                <div class="field"><label for="role">Target job role</label><select id="role"><option>Software Engineer</option><option>Python Developer</option><option>AI/ML Engineer</option><option>Data Analyst</option><option>Frontend Developer</option><option>Graduate Engineer Trainee</option></select></div>
+                <div class="field"><label for="type">Interview type</label><select id="type"><option value="Mixed">Mixed Interview</option><option value="Technical">Technical</option><option value="HR">HR Interview</option><option value="Coding">Coding Fundamentals</option></select></div>
+                <div class="field"><label for="difficulty">Difficulty level</label><select id="difficulty"><option>Beginner</option><option selected>Intermediate</option><option>Advanced</option></select></div>
+                <div class="field"><label for="duration">Interview duration</label><select id="duration"><option value="5">5 minutes · Quick practice</option><option value="10" selected>10 minutes · Standard</option><option value="15">15 minutes · Deep practice</option></select></div>
+                <button class="primary-btn" type="submit">Start mock interview <span>→</span></button>
+                <p class="privacy-note">Practice at your own pace. You can type or speak your answers.</p>
+            </form>
+        </section>
+        <section class="interview-card hidden" id="interview">
+            <div class="section-heading"><div><span class="eyebrow">LIVE PRACTICE SESSION</span><h2 id="sessionTitle">Software Engineer Interview</h2></div><span class="timer" id="timer">10:00</span></div>
+            <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+            <p class="question-count" id="questionCount">Question 1</p>
+            <div class="question-panel"><div class="ai-avatar">✦</div><div><span class="speaker-label">YOUR INTERVIEWER</span><p class="question-text" id="questionText">Tell me about yourself and your background.</p></div></div>
+            <div class="voice-row"><button class="secondary-btn" type="button" id="speakBtn">🔊 Read question aloud</button><button class="secondary-btn" type="button" id="micBtn">🎙 Speak answer</button></div>
+            <p class="voice-hint" id="voiceHint">You can use your microphone if your browser supports speech recognition.</p>
+            <label for="answer">Your answer</label><textarea id="answer" rows="5" placeholder="Type your answer here, or use the microphone..."></textarea>
+            <div class="button-row"><button class="secondary-btn" type="button" id="exitBtn">Exit interview</button><button class="primary-btn next-btn" type="button" id="nextBtn">Next question →</button></div>
+        </section>
+        <section class="report-card hidden" id="report">
+            <div class="report-icon">✓</div><span class="eyebrow">SESSION COMPLETED</span><h2>Practice complete!</h2><p id="reportSummary">You have completed your practice session.</p>
+            <div class="report-stat"><span>Questions attempted</span><strong id="attempted">0</strong></div>
+            <p class="demo-note">This is a practice summary only. AI-powered scoring and personalized feedback will be connected in the next development step.</p>
+            <button class="primary-btn" id="restartBtn" type="button">Start another interview ↗</button>
+        </section>
+        <section class="benefits">
+            <div class="benefit"><span>01</span><h3>Realistic practice</h3><p>Prepare for the questions employers commonly ask.</p></div>
+            <div class="benefit"><span>02</span><h3>Speak with confidence</h3><p>Practise speaking or organize your thoughts in writing.</p></div>
+            <div class="benefit"><span>03</span><h3>Keep improving</h3><p>Build a routine of consistent interview preparation.</p></div>
+        </section>
+        <footer>InterviewPilot AI · Built for your next opportunity.</footer>
+    </main>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
